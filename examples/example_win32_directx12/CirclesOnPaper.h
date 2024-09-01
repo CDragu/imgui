@@ -3,6 +3,14 @@
 #include "imgui.h"
 #include "vector"
 
+static constexpr int RightMouseButton = 1;
+
+struct Circle
+{
+    ImVec2  m_Pos;
+    bool m_Visible;
+};
+
 class CirclesOnPaper
 {
 public:
@@ -13,7 +21,6 @@ private:
 
     bool m_bAlive;
 
-    std::vector<Circle>(); //I want this to be a class that represents a circle in 2d space
-
+    std::vector<Circle> m_Circles;
 };
 
