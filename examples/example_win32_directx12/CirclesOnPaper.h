@@ -15,12 +15,19 @@ class CirclesOnPaper
 {
 public:
     CirclesOnPaper();
+    void Init();
     void Update();
+
+    void PopulatePile();
+
+    void PopulateFKeysUI();
 
 private:
 
     bool m_bAlive;
+    bool m_bInitialized;
 
     std::vector<Circle> m_Circles;
 };
 
+void CheckFKeys();
