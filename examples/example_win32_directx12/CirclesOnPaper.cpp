@@ -10,6 +10,7 @@ void CirclesOnPaper::Init()
 {
     PopulateFKeysUI();
     m_bInitialized = true;
+    m_PowerBar = 1;
 }
 
 void CirclesOnPaper::Update()
@@ -38,6 +39,7 @@ void CirclesOnPaper::Update()
             }
         }
 
+        DrawPercentageBar(m_PowerBar);
         //Logic
 
         int startKey = ImGuiKey_F13;
@@ -46,7 +48,19 @@ void CirclesOnPaper::Update()
         for(int i = 0; i <= lenght; i++)
         {
             if(ImGui::IsKeyPressed(ImGuiKey(startKey + i)))
+            {
                 m_Circles[i].m_Visible = !m_Circles[i].m_Visible;
+                m_PowerBar += 0.1f;
+                if(m_PowerBar > 1)
+                {
+                    m_PowerBar = 1;
+                }
+            }
+        }
+
+        if(m_PowerBar > 0)
+        {
+            m_PowerBar -= 0.1f * 1.0f / ImGui::GetIO().Framerate;
         }
 
         if(ImGui::IsMouseClicked(RightMouseButton))
@@ -154,3 +168,25 @@ void CirclesOnPaper::PopulateFKeysUI()
         }
     }
 }
+
+void CirclesOnPaper::DrawPercentageBar(float percentage)
+{
+    ImVec2 startPos = ImGui::GetWindowPos();
+
+    startPos.x = startPos.x + 300;
+    startPos.y = startPos.y + 50;
+
+    ImVec2 endPos = startPos;
+
+    endPos.x = endPos.x + 100;
+    endPos.y = endPos.y + 20;
+
+    ImGui::GetWindowDrawList()->AddRectFilled(startPos, endPos, IM_COL32(90, 90, 120, 255));
+
+    ImVec2 newEndPos = endPos;
+
+    newEndPos.x  = startPos.x + (newEndPos.x - startPos.x) * percentage;
+
+    ImGui::GetWindowDrawList()->AddRectFilled(startPos, newEndPos, IM_COL32(200, 200, 120, 255));
+}
+

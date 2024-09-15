@@ -22,8 +22,11 @@ public:
 
     void PopulateFKeysUI();
 
+    void DrawPercentageBar(float percentage);
+
 private:
 
+    float m_PowerBar;
     bool m_bAlive;
     bool m_bInitialized;
 
