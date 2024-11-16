@@ -30,6 +30,8 @@
 
 //Game Stuff
 #include "CirclesOnPaper.h"
+#include "DataStore.h"
+#include "Map.h"
 
 struct FrameContext
 {
@@ -127,6 +129,8 @@ int main(int, char**)
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
     CirclesOnPaper circle;
+    DataStore dataStore;
+    Map map(&dataStore);
 
     // Main loop
     bool done = false;
@@ -198,6 +202,7 @@ int main(int, char**)
         //4. GameStuff
 
         circle.Update();
+        map.Update();
 
         // Rendering
         ImGui::Render();

@@ -9,8 +9,8 @@ CirclesOnPaper::CirclesOnPaper()
 void CirclesOnPaper::Init()
 {
     PopulateFKeysUI();
-    m_bInitialized = true;
     m_PowerBar = 1;
+    m_bInitialized = true;
 }
 
 void CirclesOnPaper::Update()
@@ -31,7 +31,7 @@ void CirclesOnPaper::Update()
 
         ImGui::GetWindowDrawList()->AddCircle(mousePos, 10, ImColor(255, 255, 255), 20, 10);
 
-        for(auto circle : m_Circles)
+        for(auto& circle : m_Circles)
         {
             if(circle.m_Visible)
             {

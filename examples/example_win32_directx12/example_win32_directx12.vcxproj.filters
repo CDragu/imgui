@@ -25,6 +25,8 @@
       <Filter>sources</Filter>
     </ClInclude>
     <ClInclude Include="CirclesOnPaper.h" />
+    <ClInclude Include="DataStore.h" />
+    <ClInclude Include="Map.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\imgui.cpp">
@@ -52,6 +54,8 @@
       <Filter>imgui</Filter>
     </ClCompile>
     <ClCompile Include="CirclesOnPaper.cpp" />
+    <ClCompile Include="DataStore.cpp" />
+    <ClCompile Include="Map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.txt" />
