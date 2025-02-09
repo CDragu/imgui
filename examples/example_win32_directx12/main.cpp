@@ -32,6 +32,9 @@
 #include "CirclesOnPaper.h"
 #include "DataStore.h"
 #include "Map.h"
+#include "SolarSystem.h"
+#include <implot.h>
+#include <implot3d.h>
 
 struct FrameContext
 {
@@ -92,6 +95,8 @@ int main(int, char**)
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
+    ImPlot::CreateContext();
+    ImPlot3D::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
@@ -131,6 +136,7 @@ int main(int, char**)
     CirclesOnPaper circle;
     DataStore dataStore;
     Map map(&dataStore);
+    SolarSystem systemMap(&dataStore);
 
     // Main loop
     bool done = false;
@@ -200,10 +206,12 @@ int main(int, char**)
         //}
 
         //4. GameStuff
-
+        dataStore.m_Time += 1.0f / ImGui::GetIO().Framerate;
         circle.Update();
         map.Update();
-
+        systemMap.Update();
+        ImPlot::ShowDemoWindow();
+        ImPlot3D::ShowDemoWindow();
         // Rendering
         ImGui::Render();
 

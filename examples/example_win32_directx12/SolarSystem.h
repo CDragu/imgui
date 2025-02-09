@@ -4,18 +4,18 @@
 
 class DataStore;
 
-class Map
+class SolarSystem
 {
 public:
 
-    Map(DataStore* data);
+    SolarSystem(DataStore* data);
     void Init();
+    void CalculatePlanetOrbit();
     void Update();
 
 private:
     DataStore* m_Data;
     bool m_bAlive;
     bool m_bInitialized = false;
-
 };
 

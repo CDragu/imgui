@@ -27,6 +27,19 @@
     <ClInclude Include="CirclesOnPaper.h" />
     <ClInclude Include="DataStore.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="..\..\implot.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\implot_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\implot3d.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\implot3d_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="SolarSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\imgui.cpp">
@@ -56,6 +69,28 @@
     <ClCompile Include="CirclesOnPaper.cpp" />
     <ClCompile Include="DataStore.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="..\..\implot.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\implot_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\implot_items.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\implot3d.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\implot3d_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\implot3d_items.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\implot3d_meshes.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="SolarSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.txt" />

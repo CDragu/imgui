@@ -156,9 +156,14 @@
     <ClInclude Include="..\..\imgui_internal.h" />
     <ClInclude Include="..\..\backends\imgui_impl_dx12.h" />
     <ClInclude Include="..\..\backends\imgui_impl_win32.h" />
+    <ClInclude Include="..\..\implot.h" />
+    <ClInclude Include="..\..\implot3d.h" />
+    <ClInclude Include="..\..\implot3d_internal.h" />
+    <ClInclude Include="..\..\implot_internal.h" />
     <ClInclude Include="CirclesOnPaper.h" />
     <ClInclude Include="DataStore.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="SolarSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\imgui.cpp" />
@@ -168,10 +173,18 @@
     <ClCompile Include="..\..\imgui_widgets.cpp" />
     <ClCompile Include="..\..\backends\imgui_impl_dx12.cpp" />
     <ClCompile Include="..\..\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\..\implot.cpp" />
+    <ClCompile Include="..\..\implot3d.cpp" />
+    <ClCompile Include="..\..\implot3d_demo.cpp" />
+    <ClCompile Include="..\..\implot3d_items.cpp" />
+    <ClCompile Include="..\..\implot3d_meshes.cpp" />
+    <ClCompile Include="..\..\implot_demo.cpp" />
+    <ClCompile Include="..\..\implot_items.cpp" />
     <ClCompile Include="CirclesOnPaper.cpp" />
     <ClCompile Include="DataStore.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="SolarSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\misc\debuggers\imgui.natstepfilter" />
